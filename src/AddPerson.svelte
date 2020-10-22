@@ -1,5 +1,5 @@
 <script>
-    import {createEventDispatcher } from 'svelte';
+import {createEventDispatcher } from 'svelte';
 
     let dispatch = createEventDispatcher();
     let name;
@@ -14,7 +14,7 @@
             name,
             colour,
             age,
-            skills,
+            skills:skills,
             id: Math.random()
         };
         dispatch('addPerson', person);
@@ -24,21 +24,17 @@
 </script>
 
 <form on:submit={handleSubmit}>
-    <input type="text" placeholder="name" bind:value={name}>
-    <input type="number" placeholder="age" bind:value={age}>
-    <label for= "skl"> Skills:</label>
-        <ul name= "skl">
-            <input type="checkbox" bind:group={skills} value="fighting"> fighting<br>
-            <input type="checkbox" bind:group={skills} value="sneaking"> sneaking<br>
-            <input type="checkbox" bind:group={skills} value="running" >running<br>
-        </ul>
-    <label for="col"> Colour: </label>
-    <select bind:value={colour}>
-        <option value="black">black </option>
-        <option value="orange">orange </option>
-        <option value="yellow">yellow</option>
-        <option value="red">red </option>
-    </select> <br>
+    <input type="text" placeholder="name" class="form-control" bind:value={name}><br>
+    <input type="number" class="form-control" placeholder="age" bind:value={age}><br>
+    <label for= "skl"> Hobbies:</label>
+        <ul name= "skl" class="text-center">
+            <input type="checkbox" class="form-check-input" bind:group={skills} value="Photography"> Photography<br>
+            <input type="checkbox" class="form-check-input" bind:group={skills} value="Art"> Art<br>
+            <input type="checkbox" class="form-check-input" bind:group={skills} value="Singing" >Singing<br>
+            <input type="checkbox" class="form-check-input" bind:group={skills} value="Gardening" >Gardening<br>
+        </ul> <br>
+    <label for="col"> Colour: </label><br>
+    <input type="text" class="form-control"  bind:value={colour}><br>
     <button class="btn btn-info btn-sm"> Add </button>
 
 </form>

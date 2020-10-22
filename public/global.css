@@ -5,7 +5,7 @@ html, body {
 }
 
 body {
-	color: #333;
+	color: rgb(197, 189, 189); 
 	margin: 0;
 	padding: 8px;
 	box-sizing: border-box;
@@ -64,7 +64,13 @@ button:focus {
 /* extra styles*/
 
 body{
-	background-color: #010101; color: #D8D8D8;
+	background-color: #eee;
+	 color: #777;
+	 margin: 0;
+	 padding: 0;
+} 
+h4{
+	color: olivedrab;
 }
 
 

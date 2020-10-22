@@ -1,21 +1,18 @@
 <script>
     export let showModal = false;
-    export let isPromo = false;
-    const disableModal = ()=> {
-            isPromo=!isPromo;
-        };
+
 </script>
 
 {#if showModal}
-<div class="backdrop" class:promo={isPromo} on:click|self>
-    <div class="myModal" on:click={disableModal} >
-        <slot></slot>
-        
+    <div class="backDrop" on:click|self>
+        <div class="myModal">
+            <slot></slot>
+        </div>
     </div>
-</div>{/if}
+{/if}
 
 <style>
-    .backdrop{
+    .backDrop{
         width: 100%;
         height: 100%;
         position: fixed;
@@ -30,8 +27,5 @@
         text-align: center;
         color:black;
     }
-    .promo .myModal{
-        background-color: crimson;
-        color:white;
-    }
+    
 </style>
